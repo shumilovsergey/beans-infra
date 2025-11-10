@@ -1,5 +1,7 @@
 # Введение
 
+Тут я буду хранить свои бобы
+
 # Памятка 
 
 - перейти в бобовую директорию 
@@ -9,15 +11,7 @@
 package main
 
 import (
-	"io"
-	"log"
-	"net"
-	"net/http"
-	"net/http/httputil"
-	"net/textproto"
-	"net/url"
-	"strings"
-	"time"
+// ...
 	"flag"
 	"fmt"
 	"os"
