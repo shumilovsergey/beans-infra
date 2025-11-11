@@ -5,7 +5,7 @@ FROM golang:1.22-alpine AS build
 WORKDIR /src
 
 # дефолтное бобовое имя
-ARG BIN_NAME=bean
+#ARG BIN_NAME=bean
 
 # если есть внешние зависимости — можно добавить go.sum
 COPY build/go.mod ./
@@ -17,8 +17,8 @@ COPY build/main.go ./
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
 ENV CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH}
-ARG VERSION=0.0.0
-ARG BIN_NAME=bean
+#ARG VERSION=0.0.0
+#ARG BIN_NAME=bean
 
 RUN --mount=type=cache,target=/root/.cache/go-build \
     go build -trimpath -ldflags="-s -w -X 'main.Version=${VERSION}'" -o /out/${BIN_NAME} .
