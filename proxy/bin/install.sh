@@ -4,11 +4,11 @@ set -euo pipefail
 ### ---- CONFIG ----
 PORT="${PORT:-8080}"
 UPSTREAM_BASE_URL="https://api.telegram.org"
-SERVICE_NAME="proxy"
 BIN_NAME="proxy"
-INSTALL_DIR="/opt/proxy"
-SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}${PORT}.service"
-USER="proxy"
+SERVICE_NAME=$BIN_NAME$PORT
+INSTALL_DIR="/opt/${BIN_NAME}"
+SERVICE_FILE="/etc/systemd/system/${SERVICE_NAME}.service"
+USER=$BIN_NAME
 ### ----------------
 
 echo "[*] Using port: $PORT"
